@@ -2,6 +2,56 @@
 
 Sudachi 同義語辞書によって他の表現を提案する textlint ルールです。
 
+```bash
+  2:7   warning  他の表現　アップデート → 更新                              ja-sudachi-synonym-suggestion
+  6:29  warning  他の表現　メモ → 覚え書き、備忘録、メモ書き、メモランダム  ja-sudachi-synonym-suggestion
+  6:43  warning  他の表現　入力 → インプット                                ja-sudachi-synonym-suggestion
+```
+
+## Install
+
+Install with [npm](https://www.npmjs.com/):
+
+```bash
+npm install textlint-rule-ja-sudachi-synonym-suggestion
+```
+
+## Usage
+
+Via `.textlintrc`
+
+```json
+{
+  "rules": {
+    "ja-sudachi-synonym-suggestion": {
+      "severity": "warning"
+    }
+  }
+}
+```
+
+### Build
+
+Builds source codes for publish to the `lib` folder.
+You can write ES2015+ source codes in `src/` folder.
+
+```bash
+npm run build
+```
+
+### Tests
+
+Run test code in `test` folder.
+Test textlint rule by [textlint-tester](https://github.com/textlint/textlint-tester).
+
+```bash
+npm test
+```
+
+## License
+
+MIT © Tomoyuki Hata
+
 ## Disclaimer
 
 The following creations are included in this product:

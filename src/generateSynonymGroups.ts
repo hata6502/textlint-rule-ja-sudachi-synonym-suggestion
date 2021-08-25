@@ -27,7 +27,7 @@ synonyms.forEach(
   ([
     groupID,
     taigenYohgen,
-    _extraction,
+    extraction,
     _lexemeID,
     lexemeType,
     abbreviation,
@@ -45,6 +45,15 @@ synonyms.forEach(
     string,
     string
   ]) => {
+    if (
+      extraction !== "0" ||
+      lexemeType !== "0" ||
+      abbreviation !== "0" ||
+      orthographicalVariant !== "0"
+    ) {
+      return;
+    }
+
     const synonymGroup = synonymGroups.find(
       (synonymGroup) => synonymGroup.id === `${groupID}-${taigenYohgen}`
     );
@@ -53,14 +62,6 @@ synonyms.forEach(
       throw new Error(
         `Could not find synonym group ${groupID}-${taigenYohgen}`
       );
-    }
-
-    if (
-      lexemeType !== "0" ||
-      abbreviation !== "0" ||
-      orthographicalVariant !== "0"
-    ) {
-      return;
     }
 
     synonymGroup.words.push(word);

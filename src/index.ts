@@ -19,7 +19,7 @@ const reporter: TextlintRuleReporter = (context) => {
           while ((index = text.indexOf(word, index + 1)) !== -1) {
             report(
               node,
-              new RuleError(`他の表現　${otherWords.join("、")}`, { index })
+              new RuleError(`他の表現　${word} → ${otherWords.join("、")}`, { index })
             );
           }
         })

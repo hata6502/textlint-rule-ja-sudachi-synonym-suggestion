@@ -11,7 +11,7 @@ tester.run("ja-sudachi-synonym-suggestion", rule, {
         {
           type: "lint",
           ruleId: "ja-sudachi-synonym-suggestion",
-          message: "他の表現　ナレッジ、見聞、見聞き",
+          message: "他の表現　知識 → ナレッジ",
           index: 3,
           line: 1,
           column: 4,
@@ -20,7 +20,7 @@ tester.run("ja-sudachi-synonym-suggestion", rule, {
         {
           type: "lint",
           ruleId: "ja-sudachi-synonym-suggestion",
-          message: "他の表現　ナレッジマネジメント、知識管理",
+          message: "他の表現　知識経営 → ナレッジマネジメント、知識管理",
           index: 3,
           line: 1,
           column: 4,
@@ -29,7 +29,7 @@ tester.run("ja-sudachi-synonym-suggestion", rule, {
         {
           type: "lint",
           ruleId: "ja-sudachi-synonym-suggestion",
-          message: "他の表現　マネージメント",
+          message: "他の表現　経営 → マネージメント",
           index: 5,
           line: 1,
           column: 6,
