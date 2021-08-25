@@ -1,6 +1,6 @@
 {
   "name": "textlint-rule-ja-sudachi-synonym-suggestion",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Sudachi 同義語辞書によって他の表現を提案する textlint ルールです。",
   "keywords": [
     "textlintrule"

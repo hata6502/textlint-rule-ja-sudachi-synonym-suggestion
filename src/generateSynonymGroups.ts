@@ -2,7 +2,7 @@ import csvParseSync from "csv-parse/lib/sync.js";
 import fs from "fs";
 
 const synonyms = csvParseSync(
-  fs.readFileSync("lib/synonyms.txt", "utf-8").trim().replace(/\n\n/g, "\n")
+  fs.readFileSync("src/synonyms.txt", "utf-8").trim().replace(/\n\n/g, "\n")
 );
 
 const synonymGroupIDs = [
