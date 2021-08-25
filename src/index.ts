@@ -1,5 +1,4 @@
 import type { TextlintRuleReporter } from "@textlint/types";
-import { tokenize } from "kuromojin";
 import synonymGroups from "./synonymGroups.json";
 
 const reporter: TextlintRuleReporter = (context) => {
@@ -8,28 +7,23 @@ const reporter: TextlintRuleReporter = (context) => {
   return {
     async [Syntax.Str](node) {
       const text = getSource(node);
-      const tokens = await tokenize(text);
 
-      tokens.forEach((token) => {
-        synonymGroups.forEach((synonymGroup) =>
-          synonymGroup.words.forEach((word) => {
-            if (token.surface_form !== word) {
-              return;
-            }
+      synonymGroups.forEach((synonymGroup) =>
+        synonymGroup.words.forEach((word) => {
+          const otherWords = synonymGroup.words.filter(
+            (otherWord) => otherWord !== word
+          );
 
-            const otherWords = synonymGroup.words.filter(
-              (otherWord) => otherWord !== word
-            );
+          let index = -1;
 
+          while ((index = text.indexOf(word, index + 1)) !== -1) {
             report(
               node,
-              new RuleError(`他の表現　${word} → ${otherWords.join("、")}`, {
-                index: token.word_position - 1,
-              })
+              new RuleError(`他の表現　${word} → ${otherWords.join("、")}`, { index })
             );
-          })
-        );
-      });
+          }
+        })
+      );
     },
   };
 };
