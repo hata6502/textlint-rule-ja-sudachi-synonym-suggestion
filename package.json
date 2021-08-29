@@ -39,6 +39,6 @@
     "typescript": "^3.6.4"
   },
   "dependencies": {
-    "kuromojin": "^3.0.0"
+    "sudachi": "^0.1.4"
   }
 }

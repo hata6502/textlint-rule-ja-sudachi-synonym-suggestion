@@ -30,6 +30,3 @@ node_modules
 
 # Debug log from npm
 npm-debug.log
-
-# Publish src/ instead lib/
-/lib
